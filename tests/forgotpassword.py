@@ -4,7 +4,7 @@ from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
 import unittest
 import time
-from pageobject.forgotpasswordpage import LoginPage
+from pageobject.forgotpasswordpage import FpasswordPage
 
 class TestForgotPassword(unittest.TestCase):
     @classmethod
@@ -20,4 +20,9 @@ class TestForgotPassword(unittest.TestCase):
     def test_fpass_1(self):
         driver = self.driver
         driver.get(self.base_url)
-        forgetpage = TestForgotPassword(driver)
+        forgetpage = FpasswordPage(driver)
+        forgetpage.forgot_password_page_valid
+        time.sleep(1)
+
+    # # Input valid email to recover the password
+    # def test_fpass_2(self):
