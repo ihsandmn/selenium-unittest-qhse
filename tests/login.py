@@ -32,7 +32,7 @@ class TestLogin(unittest.TestCase):
         driver.get(self.base_url)
         loginpage = LoginPage(driver)
         loginpage.input_login_with("fcb006","test123")
-        time.sleep(5)
+        time.sleep(4)
         self.assertEqual("Under Construction - QHSE", self.driver.title, "Web title not matching")
     
     # Login with invalid NIK
