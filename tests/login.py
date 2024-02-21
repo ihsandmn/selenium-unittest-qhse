@@ -14,7 +14,7 @@ class TestLogin(unittest.TestCase):
         self.driver = webdriver.Chrome(
             service=ChromeService(ChromeDriverManager().install())
         )
-        self.driver.implicitly_wait(15)
+        self.driver.implicitly_wait(20)
         self.driver.maximize_window()
         self.base_url = "https://dev-hse.apps-madhani.com/login"
 
@@ -26,7 +26,7 @@ class TestLogin(unittest.TestCase):
         self.assertEqual("Login - QHSE", self.driver.title, "Web title not matching")
         self.assertTrue(loginpage.valid_login_page)
         time.sleep(1)
-    
+        
     # Login with valid account
     def test_login_2(self):
         driver = self.driver
