@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.support import expected_conditions as EC
 import HTMLTestRunner
 import unittest
 import time
@@ -26,7 +27,7 @@ class TestLogin(unittest.TestCase):
         self.assertEqual("Login - QHSE", self.driver.title, "Web title not matching")
         self.assertTrue(loginpage.valid_login_page)
         time.sleep(1)
-        
+
     # Login with valid account
     def test_login_2(self):
         driver = self.driver
