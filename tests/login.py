@@ -80,6 +80,11 @@ class TestLogin(unittest.TestCase):
         loginpage = LoginPage(driver)
         loginpage.open_forgot_password
         self.assertTrue(loginpage.validate_forgot_password)
+    
+    def test_login_8(self):
+        driver = self.driver
+        driver.get(self.base_url)
+        loginpage = LoginPage(driver)
         
 
     @classmethod
